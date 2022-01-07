@@ -1,7 +1,3 @@
-#lang racket
-(provide while)
-
-
 ;   Syntax for Animated Programming
 ;   Purpose: Provide while loop construct that returns (void)
 ;
@@ -10,14 +6,18 @@
 
 
 
-(define-syntax while
-  (syntax-rules ()
-    ((while condition body ...)
-     (let loop ()
-       (if condition
-           (begin
-             body 
-             ...
-             (loop))
-           (void))))))
+(module while racket
+
+  (provide while)
+
+  (define-syntax while
+    (syntax-rules ()
+      ((while condition body ...)
+       (let loop ()
+         (if condition
+             (begin
+               body 
+               ...
+               (loop))
+             (void)))))))
 
