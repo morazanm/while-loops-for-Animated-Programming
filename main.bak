@@ -2,4 +2,4 @@
 #lang racket
 (module fsm racket
   (require "while.rkt")
-  (provide while))
+  (provide (all-from-out "while.rkt")))
