@@ -1,5 +1,5 @@
 ;; main.rkt
 #lang racket
-(module fsm racket
-  (require "while.rkt")
-  (provide while))
+
+(require "while.rkt")
+(provide while)

@@ -2,7 +2,7 @@
 
 (require (for-syntax syntax/parse))
 
-;(provide while)
+(provide while)
 
 
 ;   Syntax for Animated Programming
