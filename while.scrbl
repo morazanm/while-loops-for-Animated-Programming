@@ -18,7 +18,7 @@ as done in the textbook @italic{Animated Programming: Intermediate Program Desig
 @section{Syntax}
 
 @defproc[(while [test expression] 
-           [body (listof expression)])
+           [body (cons expression (listof expression))])
          (void)]
         If @italic{test} evaluates to @racket{#true} then the @italic{body} is evaluated. Once
          the @italic{body} is evaluated control returns to the top of the
