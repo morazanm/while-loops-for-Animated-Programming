@@ -24,7 +24,7 @@
 
 (define-syntax (while stx)
   (syntax-parse stx
-    [(_ condition body ...+)
+    [(_ condition:expr body:expr ...+)
      #`(let loop ()
          (if condition
              (begin
@@ -35,4 +35,15 @@
      (error (format "Invalid while syntax: Missing body.\n Expected syntax: (while <expr> <expr>^+).\n Given: (while ~s)" (syntax->datum #'condition)))]
     [else
      (error (format "Invalid while syntax: Missing driver and body.\n Expected syntax: (while <expr> <expr>^+).\n Given: (while)"))]))
+
+(define x 10)
+(define res 0)
+(begin
+    (while (< 0 x)
+           (set! res (+ res x))
+           (set! x (sub1 x)))
+    res)
+
+(begin
+    (while 7 "5"))
 
